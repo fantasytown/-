@@ -9,7 +9,7 @@ import android.content.*;
 
 public class FirstActivity extends Activity
 {
-
+	private String[] data={"a","b","c","c","a","b","c","c","a","b","c","c"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -17,6 +17,10 @@ public class FirstActivity extends Activity
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.first_layout);
+		ArrayAdapter<String> adapter = 
+		new ArrayAdapter<String>(FirstActivity.this,android.R.layout.simple_list_item_1,data);
+		ListView listview = (ListView)findViewById(R.id.list_view);
+		listview.setAdapter(adapter);
 		Button button1 = (Button)findViewById(R.id.button_1);
 		button1.setOnClickListener(new OnClickListener(){
 
