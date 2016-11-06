@@ -18,7 +18,6 @@ public class FruitAdapter extends ArrayAdapter<Fruit>
 		Fruit fruit = getItem(position);
 		View view = LayoutInflater.from(getContext()).inflate(resourceld,null);
 		
-		// TODO: Implement this method
 		return super.getView(position, convertView, parent);
 	}
 	
