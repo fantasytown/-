@@ -5,6 +5,7 @@ import android.text.*;
 import android.os.*;
 import android.widget.*;
 import android.view.View.*;
+import android.content.*;
 
 public class FirstActivity extends Activity
 {
@@ -23,6 +24,8 @@ public class FirstActivity extends Activity
 				public void onClick(View v)
 				{
 					Toast.makeText(FirstActivity.this, "hello", Toast.LENGTH_SHORT).show();
+					Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+					startActivityForResult(intent,1);
 					// TODO: Implement this method
 				}
 			}
@@ -53,5 +56,22 @@ public class FirstActivity extends Activity
 		}
 		return true;
 	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		switch (requestCode){
+			case 1:
+				if (resultCode == RESULT_OK){
+					String d = data.getStringExtra("data");
+					Toast.makeText(this,d,Toast.LENGTH_SHORT).show();
+				}
+			break;
+			default:
+		}
+		// TODO: Implement this method
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
 	
 }
