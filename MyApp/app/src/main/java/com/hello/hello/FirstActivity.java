@@ -25,6 +25,8 @@ public class FirstActivity extends Activity
 				{
 					Toast.makeText(FirstActivity.this, "hello", Toast.LENGTH_SHORT).show();
 					Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+					//向上传递数
+					//据
 					startActivityForResult(intent,1);
 					// TODO: Implement this method
 				}
